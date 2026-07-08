@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My AWS Website</title>
+
+    <style>
+
+        body{
+
+            background:#f2f2f2;
+            font-family:Arial;
+            text-align:center;
+            margin-top:100px;
+
+        }
+
+        h1{
+
+            color:blue;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>Welcome to My Website</h1>
+
+<h2>Website Hosted on AWS EC2</h2>
+
+<p>Every visit is recorded in Amazon S3.</p>
+
+<script>
+
+window.onload=function(){
+
+fetch("https://u43lcynime.execute-api.ap-south-1.amazonaws.com/visit/visit")
+
+.then(response=>response.json())
+
+.then(data=>{
+
+console.log(data.message);
+
+})
+
+.catch(error=>{
+
+console.log(error);
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
